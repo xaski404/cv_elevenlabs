@@ -1,6 +1,0 @@
-name = "cvelevenlabs"
-compatibility_date = "2024-04-03"
-compatibility_flags = ["nodejs_compat"]
-
-[vars]
-# Dodatkowe zmienne środowiskowe można dodać tutaj
