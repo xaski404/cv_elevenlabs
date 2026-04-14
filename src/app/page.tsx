@@ -68,11 +68,11 @@ export default function Home() {
       {/* Niewidzialny plik audio */}
       <audio
         ref={audioRef}
-        src="/intro.mp3"
-        type="audio/mpeg"
         preload="auto"
         onEnded={handleAudioEnded}
-      />
+      >
+        <source src="/intro.mp3" type="audio/mpeg" />
+      </audio>
 
       <motion.div
         onMouseMove={handleMouseMove}
@@ -132,7 +132,7 @@ export default function Home() {
               onClick={toggleAudio}
               className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-accent text-white hover:bg-orange-500 transition-colors focus:outline-none focus:ring-4 focus:ring-accent/30"
             >
-              {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current" translate="yes" style={{ transform: "translateX(2px)" }} />}
+              {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current" style={{ transform: "translateX(2px)" }} />}
             </button>
 
             {/* Visualizer (Modyfikowane przez animacje CSS/Framer) */}
