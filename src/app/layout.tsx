@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jakub Łaski | AI & Full-Stack Developer",
+  title: "Jakub Łaski | AI & Process Automation",
   description: "Nowoczesne CV i wizytówka.",
 };
 

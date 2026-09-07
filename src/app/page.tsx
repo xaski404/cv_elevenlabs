@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Play, Pause } from "lucide-react";
 import Image from "next/image";
@@ -54,13 +54,11 @@ export default function Home() {
     }
   };
 
-  const randomSeeds = React.useMemo(() => {
-    return Array.from({ length: 24 }).map(() => ({
-      height: Math.random() * 60 + 40,
-      duration: Math.random() * 0.3,
-      delay: Math.random() * 0.2,
-    }));
-  }, []);
+  const visualizerBars = Array.from({ length: 24 }, (_, i) => ({
+    height: 40 + ((i * 17) % 60),
+    duration: (i % 4) * 0.08,
+    delay: (i % 5) * 0.04,
+  }));
 
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center p-6 md:p-12 overflow-hidden perspective-1000">
@@ -120,7 +118,7 @@ export default function Home() {
             style={{ transform: "translateZ(20px)" }}
             className="text-sm md:text-md text-slate-300 font-light mb-8"
           >
-            Applied Computer Science Engineer <br className="md:hidden" /> | AI & Full-Stack Developer
+            Applied Computer Science Engineer <br className="md:hidden" /> | AI & Process Automation
           </p>
 
           {/* AI Voice Player & Visualizer */}
@@ -137,7 +135,7 @@ export default function Home() {
 
             {/* Visualizer (Modyfikowane przez animacje CSS/Framer) */}
             <div className="flex-1 flex items-center justify-center gap-1 h-8 px-4 overflow-hidden">
-              {randomSeeds.map((seed, i) => (
+              {visualizerBars.map((seed, i) => (
                 <motion.div
                   key={i}
                   animate={{
